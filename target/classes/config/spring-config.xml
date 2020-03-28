@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+
+    <!-- Printer -->
+	<bean id="printer" class="com.xmlprocessor.service.impl.AnsiConsolePrinter" />
+
+    <!-- FilenameExtensionFilter -->
+    <bean id="filenameExtensionFilter" class="com.xmlprocessor.util.FilenameExtensionFilter">
+		<constructor-arg index="0">
+			<list>
+				<value>xml</value>
+            </list>
+		</constructor-arg>
+	</bean>
+
+   	<!-- FileReader -->
+	<bean id="fileReader" class="com.xmlprocessor.service.impl.FileReader">
+	    <property name="filenameFilter" ref="filenameExtensionFilter" />
+	</bean>
+
+	<!-- Marshaller -->
+	<bean id="marshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+		<property name="classesToBeBound">
+            <list>
+                <value>com.xmlprocessor.types.CombinedType</value>
+            </list>
+        </property>
+        <property name="schemas">
+            <list>               
+                <value>xmlvalidator.xsd</value>
+                <value>complextypes.xsd</value>
+                <value>simpletypes.xsd</value>
+            </list>
+        </property>
+		<property name="marshallerProperties">
+			<map>
+				<entry>
+					<key>
+						<util:constant static-field="javax.xml.bind.Marshaller.JAXB_FORMATTED_OUTPUT" />
+					</key>
+					<value type="java.lang.Boolean">true</value>
+				</entry>
+			</map>
+		</property>
+    </bean>
+    	    
+    <!-- XmlService -->
+	<bean id="xmlService" class="com.xmlprocessor.service.impl.XmlService">
+		<property name="printer" ref="printer" />
+	    <property name="marshaller" ref="marshaller" />
+        <property name="unmarshaller" ref="marshaller" />	
+	</bean>
+	
+</beans>

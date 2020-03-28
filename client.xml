@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns:Combined xmlns:ns="http://www.tempuri.org/types">
+	<Version>V001.000.00</Version>
+	<Client>
+		<Id>12</Id>
+		<Name>A</Name>	
+	</Client>
+	<Client>
+		<Id>34</Id>
+		<Name>B</Name>		
+	</Client>	
+	<Client>
+		<Id>56</Id>
+		<Name>C</Name>	
+	</Client>	
+	<Client>
+		<Id>78</Id>
+		<Name>D</Name>		
+	</Client>	
+	<Client>
+		<Id>90</Id>
+		<Name>E</Name>	
+	</Client>	
+</ns:Combined>

@@ -1,0 +1,127 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>com.xmlprocessor</groupId>
+  <artifactId>XmlProcessor</artifactId>
+  <version>v1.0.0</version>
+  <name>XML Processor</name>  
+  <packaging>jar</packaging>
+  
+  <url>http://maven.apache.org</url>
+  
+  <properties>
+     <project.build.java.target>1.8</project.build.java.target>
+     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+     <org.springframework.version>5.0.7.RELEASE</org.springframework.version>
+     <!-- project.build.outputDirectory></project.build.outputDirectory-->        
+  </properties> 
+  
+  <repositories>
+      <repository>
+          <id>apachem2</id>
+          <name>apache Repository</name>
+          <url>https://repository.apache.org/content/repositories/releases/</url>
+      </repository>
+      <repository>
+          <id>jboss-public-repository-group</id>
+          <name>JBoss Public Maven Repository Group</name>
+          <url>http://repository.jboss.org/nexus/content/groups/public-jboss</url>
+      </repository>    
+      <repository>
+    		<id>codelds</id>
+    		<url>https://code.lds.org/nexus/content/groups/main-repo</url>
+  	</repository>        
+  </repositories>
+  
+  <build>
+ 	<plugins>
+  	  <plugin>
+	    <artifactId>maven-assembly-plugin</artifactId>
+	    <executions>
+	      <execution>
+	        <phase>package</phase>
+	        <goals>
+	          <goal>single</goal>
+	        </goals>
+	      </execution>
+	    </executions>
+	    <configuration>
+	      <archive>
+	        <manifest>
+	          <addClasspath>true</addClasspath>
+	          <mainClass>com.xmlprocessor.main.XmlProcessorDrv</mainClass>
+	        </manifest>
+	      </archive>
+	      <descriptorRefs>
+	        <descriptorRef>jar-with-dependencies</descriptorRef>
+	      </descriptorRefs>
+       	  <finalName>XmlProcessor</finalName>
+       	  <appendAssemblyId>false</appendAssemblyId>                 
+	    </configuration>
+  	  </plugin>	  	 
+  	</plugins>  	
+  </build> 
+        
+  <dependencies>
+  	 <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+     <dependency>
+         <groupId>org.springframework</groupId>
+         <artifactId>spring-core</artifactId>
+         <version>${org.springframework.version}</version>
+     </dependency>		  
+ 	 <!-- https://mvnrepository.com/artifact/org.springframework/spring-expression -->
+     <dependency>
+         <groupId>org.springframework</groupId>
+         <artifactId>spring-expression</artifactId>
+         <version>${org.springframework.version}</version>
+     </dependency>
+     <!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
+     <dependency>
+         <groupId>org.springframework</groupId>
+         <artifactId>spring-beans</artifactId>
+         <version>${org.springframework.version}</version>
+     </dependency>     
+     <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+     <dependency>
+         <groupId>org.springframework</groupId>
+         <artifactId>spring-context</artifactId>
+         <version>${org.springframework.version}</version>
+     </dependency>
+     <!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support -->
+     <dependency>
+         <groupId>org.springframework</groupId>
+         <artifactId>spring-context-support</artifactId>
+         <version>${org.springframework.version}</version>
+     </dependency>
+     <!-- https://mvnrepository.com/artifact/org.springframework/spring-oxm -->
+	 <dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-oxm</artifactId>
+	    <version>${org.springframework.version}</version>
+	 </dependency>      
+	 
+     <!-- https://mvnrepository.com/artifact/org.fusesource.jansi/jansi -->
+	 <dependency>
+	    <groupId>org.fusesource.jansi</groupId>
+	    <artifactId>jansi</artifactId>
+	    <version>1.17.1</version>
+	 </dependency>
+      
+     <!-- https://mvnrepository.com/artifact/commons-cli/commons-cli -->
+	 <dependency>
+	    <groupId>commons-cli</groupId>
+	    <artifactId>commons-cli</artifactId>
+	    <version>1.4</version>
+	 </dependency>
+	 
+	 <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+	 <dependency>
+	    <groupId>commons-io</groupId>
+	    <artifactId>commons-io</artifactId>
+	    <version>2.5</version>
+	 </dependency>	 
+  
+  </dependencies>   
+  
+</project>

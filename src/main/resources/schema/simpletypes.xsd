@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+			xmlns="simpletypes" 
+			targetNamespace="simpletypes">
+	
+	<xsd:simpleType name="VersionType">
+		<xsd:annotation>
+			<xsd:documentation>V000.000.00</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="11"/>
+			<xsd:pattern value="V[0-9]{3}.[0-9]{3}.[0-9]{2}"/>
+		</xsd:restriction>
+	</xsd:simpleType>		
+    
+    <xsd:simpleType name="IdType">
+		<xsd:annotation>
+			<xsd:documentation>Int, 10 max</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:nonNegativeInteger">
+			<xsd:totalDigits value="10"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="NameType">
+		<xsd:annotation>
+			<xsd:documentation>String, 50 max</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="50"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="ApartmentType">
+		<xsd:annotation>
+			<xsd:documentation>Int, 4 max</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:nonNegativeInteger">
+			<xsd:totalDigits value="4"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+			
+	<xsd:simpleType name="HouseNumberType">
+		<xsd:annotation>
+			<xsd:documentation>Int, 3 max</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:nonNegativeInteger">
+			<xsd:totalDigits value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="StreetType">
+		<xsd:annotation>
+			<xsd:documentation>String, 40 max</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="40"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="CityType">
+		<xsd:annotation>
+			<xsd:documentation>City, 40 max</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="40"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="CountryType">
+		<xsd:annotation>
+			<xsd:documentation>Country, 30 max</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="30"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="IndexType">
+		<xsd:annotation>
+			<xsd:documentation>Int, 10 max</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:nonNegativeInteger">
+			<xsd:totalDigits value="10"/>
+		</xsd:restriction>
+	</xsd:simpleType>	
+	
+</xsd:schema>

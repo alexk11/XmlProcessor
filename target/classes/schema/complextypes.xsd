@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+            xmlns="complextypes" 
+            xmlns:ist="simpletypes" 
+            targetNamespace="complextypes">
+			
+	<xsd:import namespace="simpletypes" schemaLocation="simpletypes.xsd"/>
+	
+	<xsd:complexType name="CombinedType">
+		<xsd:sequence>
+			<xsd:element name="Version" type="ist:VersionType">
+				<xsd:annotation>
+					<xsd:documentation>The version</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>							
+			<!-- xsd:choice-->
+				<xsd:element name="Address" type="AddressType" maxOccurs="1">
+					<xsd:annotation>
+						<xsd:documentation>Description of the address type</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="Client" type="ClientType" maxOccurs="unbounded">
+					<xsd:annotation>
+						<xsd:documentation>Description of the client type</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+			<!-- /xsd:choice-->
+		</xsd:sequence>
+	</xsd:complexType>	
+	<xsd:complexType name="AddressType">
+		<xsd:sequence>
+			<xsd:element name="Apartment" type="ist:ApartmentType">
+				<xsd:annotation>
+					<xsd:documentation>Apartment number</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="House" type="ist:HouseNumberType">
+				<xsd:annotation>
+					<xsd:documentation>House number</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Street" type="ist:StreetType">
+				<xsd:annotation>
+					<xsd:documentation>Street name</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>			
+			<xsd:element name="City" type="ist:CityType">
+				<xsd:annotation>
+					<xsd:documentation>City name</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Country" type="ist:CountryType">
+				<xsd:annotation>
+					<xsd:documentation>Country name</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Index" type="ist:IndexType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Postal index</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>			
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ClientType">
+		<xsd:sequence>
+			<xsd:element name="Id" type="ist:IdType">
+				<xsd:annotation>
+					<xsd:documentation>The id</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>	
+			<xsd:element name="Name" type="ist:NameType">
+				<xsd:annotation>
+					<xsd:documentation>The name</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>			
+		</xsd:sequence>
+	</xsd:complexType>
+	
+</xsd:schema>

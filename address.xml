@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns:Combined xmlns:ns="http://www.tempuri.org/types">
+	<Version>V001.000.00</Version>
+	<Address1>
+		<Apartment>50</Apartment>
+		<House>7</House>
+		<Street>Sadovaya Str</Street>
+		<City>Saint Petersburg</City>
+		<Country>Russia</Country>
+		<Index>123456</Index>
+	</Address1>
+</ns:Combined>

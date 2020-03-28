@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema xmlns:ns="http://www.tempuri.org/types" 
+			xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+			xmlns:ict="complextypes" 
+			targetNamespace="http://www.tempuri.org/types" 
+			elementFormDefault="qualified">
+			
+	<xsd:import namespace="complextypes" schemaLocation="complextypes.xsd"/>
+	
+	<xsd:annotation>
+		<xsd:documentation>The XSD structure</xsd:documentation>
+	</xsd:annotation>
+	
+	<xsd:element name="Combined" type="ict:CombinedType">
+		<xsd:annotation>
+			<xsd:documentation>Definition of the combined type</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+		
+</xsd:schema>
+
