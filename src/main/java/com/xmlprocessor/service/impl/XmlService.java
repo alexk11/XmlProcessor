@@ -105,10 +105,10 @@ public class XmlService implements XmlServiceInt {
 	            xmlFileSource = new StreamSource(fileInputStream);
 	            combinedType = (CombinedType) unmarshaller.unmarshal(xmlFileSource);
 	            printer.bold("\nXml file [" + currentFile.getName()  + "] validation success!\n");	            
-	            printer.bold("\nVersion: ").println(combinedType.getVersion());	            
+	            printer.traceln("Version: ").println(combinedType.getVersion());	            
 	            addressType = combinedType.getAddress();
 	            if (addressType != null) {
-	            	printer.bold("\nAddress: ").println(addressType.toString());
+	            	printer.warnln("Address: ").println(addressType.toString());
 	            } else if (combinedType.getClients() != null) {
 	            	int i=0;
 	            	for (ClientType client : combinedType.getClients()) {
@@ -124,7 +124,7 @@ public class XmlService implements XmlServiceInt {
 	            } 
 	        } 
         }      
-        printer.bold("\nValidating completed.");
+        printer.trace("Validating completed.");
     }
     
     

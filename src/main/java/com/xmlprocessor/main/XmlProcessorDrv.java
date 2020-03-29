@@ -40,6 +40,12 @@ public class XmlProcessorDrv {
         
         // read command line args
         CommandLineArgs cmdLineArgs = new CommandLineArgs(args);   
+                             
+//        printer.boldln("Test bold");
+//        printer.debugln("test debugln");
+//        printer.fatalln("test fatal");
+//        printer.debugf("test debugf", Attribute.INTENSITY_BOLD);
+//        printer.errorln("test error");
 
         // Show version
         if (cmdLineArgs.hasOption(CommandLineArgs.CLI_OPTION_VERSION)) {
@@ -54,9 +60,8 @@ public class XmlProcessorDrv {
             cmdLineArgs.printHelp(PROG_NAME);
             return;
         } else {        
-	        String dir = cmdLineArgs.getOptionValue(CommandLineArgs.CLI_OPTION_DIRECTORY); 
-	        //printer.bold("\nFolder with XML files: ").println(dir);
-            printer.printf("\n%s %s","Folder with XML files: ", dir);    
+	        String dir = cmdLineArgs.getOptionValue(CommandLineArgs.CLI_OPTION_DIRECTORY);	       
+            printer.debugln("\nFolder with XML files: " + dir);    
 	        List<File> xmlFiles;
 	        XmlServiceInt xmlService = Compositor.getXmlService();	       
 	        try {
