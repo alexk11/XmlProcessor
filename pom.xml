@@ -13,7 +13,7 @@
   <properties>
      <project.build.java.target>1.8</project.build.java.target>
      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-     <org.springframework.version>5.0.7.RELEASE</org.springframework.version>
+     <org.springframework.version>5.2.21.RELEASE</org.springframework.version>
      <!-- project.build.outputDirectory></project.build.outputDirectory-->        
   </properties> 
   
